@@ -1,0 +1,24 @@
+{
+  "name": "@exoquic/pub",
+  "version": "1.0.2",
+  "description": "Exoquic realtime event publishing library for server-side applications",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pubsub",
+    "publish",
+    "publisher",
+    "event",
+    "streaming",
+    "realtime",
+    "persistent",
+    "scalable",
+    "backend",
+    "server",
+    "exoquic"
+  ],
+  "author": "Hamza Hajderovic",
+  "license": "MIT"
+}
