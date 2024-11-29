@@ -1,6 +1,6 @@
 {
   "name": "@exoquic/pub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Exoquic realtime event publishing library for server-side applications",
   "main": "src/index.js",
   "scripts": {
