@@ -1,5 +1,5 @@
 const DEFAULT_PUBLISHER_CONFIG = {
-  serverUrl: "https://pub.exoquic.com",
+  serverUrl: "https://dev.exoquic.com",
 }
 
 /**
