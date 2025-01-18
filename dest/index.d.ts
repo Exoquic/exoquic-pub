@@ -6,6 +6,16 @@ interface PublisherConfig {
 	 * The URL to exoquic, defaults to https://dev.exoquic.com.
 	 */
 	serverUrl: string;
+	
+	/**
+	 * The environment to connect to, defaults to "dev".
+	 */
+	env: "dev" | "prod";
+
+	/**
+	 * The API key for the Exoquic account.
+	 */
+	apiKey: string;
 }
 
 /**
@@ -33,28 +43,16 @@ interface ExoquicEvent {
 }
 
 /**
- * Configuration object for the ExoquicPublisher constructor.
- */
-interface ExoquicPublisherConstructorConfig {
-	/**
-	 * The API key for the Exoquic account.
-	 */
-	apiKey: string;
-}
-
-/**
  * ExoquicPublisher class.
  */
 declare class ExoquicPublisher {
 	/**
 	 * Constructs a ExoquicPublisher instance.
 	 * 
-	 * @param config General configurations
-	 * @param publisherConfig Configurations for the Exoquic Publisher
+	 * @param config Publisher configurations
 	 */
 	constructor(
-		config: ExoquicPublisherConstructorConfig,
-		publisherConfig?: PublisherConfig
+		config?: PublisherConfig
 	);
 
 	/**
@@ -70,5 +68,4 @@ export {
 	ExoquicPublisher,
 	ExoquicEvent,
 	PublisherConfig,
-	ExoquicPublisherConstructorConfig 
 };

@@ -1,7 +1,3 @@
-const DEFAULT_PUBLISHER_CONFIG = {
-  serverUrl: "https://dev.exoquic.com",
-}
-
 /**
  * Used to publish events to Exoquic event-streaming platform.
  * 
@@ -14,12 +10,14 @@ class ExoquicPublisher {
    * 
    * @param {Object} config Configuration object for the Exoquic Publisher.
    * @param {string} config.serverUrl The URL to exoquic, defaults to https://dev.exoquic.com.
+   * @param {string} config.env The environment to connect to, defaults to "dev".
+   * @param {string} config.apiKey The API key for the Exoquic account.
    */
-  constructor({ apiKey }, config = DEFAULT_PUBLISHER_CONFIG) {
-    if (!config || !config.serverUrl) {
+  constructor({ apiKey, env = "dev", serverUrl = `https://${env}.exoquic.com` }) {
+    if (!serverUrl) {
       throw new Error("ExoquicPublisher requires 'serverUrl' in the config.");
     }
-    this.serverUrl = config.serverUrl;
+    this.serverUrl = serverUrl;
     this.apiKey = apiKey;
   }
 
