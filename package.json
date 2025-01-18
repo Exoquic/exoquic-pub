@@ -1,8 +1,13 @@
 {
   "name": "@exoquic/pub",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Exoquic realtime event publishing library for server-side applications",
   "main": "src/index.js",
+  "types": "dest/index.d.ts",
+  "files": [
+    "dest",
+    "src/index.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
