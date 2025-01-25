@@ -53,7 +53,7 @@ class ExoquicPublisher {
       payload: event.payload,
     };
 
-    const response = await fetch(`${this.serverUrl}/publish`, {
+    const response = await fetch(`${this.serverUrl}/mpublish`, {
       method: "POST",
       body: JSON.stringify(exoquicEvent),
       headers: {
