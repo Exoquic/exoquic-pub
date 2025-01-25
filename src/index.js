@@ -24,7 +24,7 @@ class ExoquicPublisher {
   /**
    * Publishes an event to Exoquic event-streaming platform.
    * 
-   * @param {Object} event The event to be published.
+   * @param {ExoquicEvent | MultiChannelExoquicEvent} event The event to be published.
    * 
    * @param {string} event.topic The topic that the event will be sent to. 
    * @param {string} event.payload Event payload to be sent. An object will be JSON serialized.
@@ -40,6 +40,10 @@ class ExoquicPublisher {
 
     if ((!event.payload || event.payload == "") && !event.key) {
       throw new Error("Failed to publish event: payload and key cannot both be empty. If you want to send a tombstone event, specify a key and leave payload empty.");
+    }
+
+    if (event.channel && !Array.isArray(event.channel)) {
+      event.channel = [event.channel];
     }
 
     const exoquicEvent = {

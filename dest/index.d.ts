@@ -42,6 +42,13 @@ interface ExoquicEvent {
 	key?: string;
 }
 
+interface MultiChannelExoquicEvent {
+	topic: string;
+	payload: string | "";
+	channels: string[];
+	key?: string;
+}
+
 /**
  * ExoquicPublisher class.
  */
@@ -61,7 +68,7 @@ declare class ExoquicPublisher {
 	 * @param event The event to be published
 	 * @returns Promise that resolves if event was successfully published. Errors otherwise.
 	 */
-	publish(event: ExoquicEvent): Promise<void>;
+	publish(event: ExoquicEvent | MultiChannelExoquicEvent): Promise<void>;
 }
 
 export { 
